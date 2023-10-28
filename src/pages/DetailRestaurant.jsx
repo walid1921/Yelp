@@ -1,4 +1,3 @@
-import React from 'react'
 import { GiHamburger, GiPizzaSlice, GiFoodTruck } from "react-icons/gi";
 
 import { BsFillStarFill, BsPersonCircle } from "react-icons/bs";
