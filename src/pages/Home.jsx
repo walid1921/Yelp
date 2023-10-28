@@ -5,9 +5,13 @@ import Restaurant from "./Restaurant"
 function Home() {
   return (
     <div>
-      <Header/>
-      <Restaurant/>
-      <Footer/>
+      <Header />
+
+      <main className=" container mx-auto">
+        <Restaurant />
+        <Footer />
+      </main>
+
     </div>
   )
 }
