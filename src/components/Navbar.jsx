@@ -5,7 +5,7 @@ function Navbar() {
 
 
   return (
-    <nav >
+    <nav className='z-100'>
 
       <div className="flex items-center justify-between flex-wrap e py-4 lg:px-12 shadow">
 
@@ -16,7 +16,7 @@ function Navbar() {
           <div className="block lg:hidden">
             <button
               id="nav"
-              className="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-blue-700 hover:text-blue-700 hover:border-blue-700"
+              className="flex items-center px-3 py-2 border-2 rounded"
             >
               <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Menu</title>
@@ -47,7 +47,7 @@ function Navbar() {
           <div className="flex gap-4">
             <DropDown title={'Yelp for Business'} text1={'Add Company'} text2={'Claim you business'} text3={'Log in to Business Account'} text4={'Explore Yelp for Business'} border={' border border-gray-300 rounded-md shadow-sm'} />
 
-            <a href="#" className="block text-md px-4 py-2  rounded text-white ml-2 border font-semibold hover:text-white mt-4 hover:bg-red-400 lg:mt-0">
+            <a href="#" className="block text-md px-4 py-2  rounded text-black ml-2 border font-semibold hover:text-white mt-4 hover:bg-red-400 lg:mt-0">
               Sign in
             </a>
             <a href="#" className="block text-md px-4 py-2 rounded text-white  bg-red-600 ml-2 border font-semibold hover:text-white mt-4 hover:opacity-50 lg:mt-0">
@@ -58,7 +58,7 @@ function Navbar() {
         </div>
       </div>
 
-      <div className='flex justify-center mt-3 '>
+      <div className='flex justify-center my-3 '>
 
         <DropDown title={'Restaurants'} text1={'To pick up'} text2={'Citizens '} text3={'Chinese'} text4={'Italian'} />
 

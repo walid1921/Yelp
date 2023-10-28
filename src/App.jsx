@@ -1,39 +1,36 @@
+import React, { useState, useEffect } from 'react';
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import DetailRestaurant from "./pages/DetailRestaurant"
-
-
-const object = {
-  id: 0,
-  name: "Restaurant Name",
-  img: "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/8a6cc705477a/assets/img/home/hero_photos/uteUmycsbh0UibXk-At-3A.jpg",
-  location: ["city", "latitude", "longitude", "address", "opening_hours"],
-  tags: ["genre"],
-  comments: [
-    {
-      user: "name",
-      review: "review",
-      user_rating: 4 / 5,
-      date: Date.now(),
-    },
-  ],
-};
+import DetailRestaurant from "./pages/DetailRestaurant";
+import Navbar from './components/Navbar';
 
 export default function App() {
-  return (
+  const [restaurantData, setRestaurantData] = useState([]);
 
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://crossoverbackend.onrender.com/api/restaurant');
+        const data = await response.json();
+        setRestaurantData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  return (
     <>
       <Router>
+      <Navbar />
+
         <Routes>
           <Route path="/detail" element={<DetailRestaurant />} />
-          
-          <Route path="/" element={<Home object={object} />} />
-
+          <Route path="/" element={<Home data={restaurantData} />} />
         </Routes>
-
       </Router>
-
     </>
   )
 }
-

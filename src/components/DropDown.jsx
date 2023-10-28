@@ -23,11 +23,11 @@ function DropDown({ title, text1, text2, text3, text4, border }) {
   }, []);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center z-100">
       <div className="relative group w-[170px] mr-10" ref={dropdownRef}>
         <button
           id="dropdown-button"
-          className={`inline-flex justify-center w-full py-2 text-sm font-medium text-white bg-transparent ${border}`}
+          className={`inline-flex justify-center w-full py-2 text-sm font-medium text-black ${border}`}
           onClick={toggleDropdown}
         >
           <span className="mr-2">{title}</span>
